@@ -18,21 +18,9 @@ namespace Account_Docs_Workers
         [STAThread]
         static void Main()
         {
-            Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartPage());
-        }
-
-        private static void Init()
-        {
-            string path = Directory.GetCurrentDirectory() + "Workers_Documents.xml";
-            workers.Add(new Worker("Кристина", "Шуканова", "Олеговна", new DateTime(1988, 9, 14)));
-            workers.Add(new Worker("Никифороов", "Андрей", "Алексеевич", new DateTime(1985, 10, 25)));
-            workers.Add(new Worker("Иванов", "Иван", "Иванович", new DateTime(1980, 2, 7)));
-
-            FileProvider.SerializeWorker(path, workers);
-            Worker.AddWorkersToList(workers, path);
+            Application.Run(new StartPageForm());
         }
     }
 }

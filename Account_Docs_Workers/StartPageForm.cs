@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace Account_Docs_Workers
 {
-    public partial class StartPage : Form
+    public partial class StartPageForm : Form
     {
-        public StartPage()
+        public StartPageForm()
         {
             InitializeComponent();
         }
 
         private void WorkersListButton_Click(object sender, EventArgs e)
         {
-
+            var workersListForm = new WorkerListForm();
+            workersListForm.Show();
         }
 
         private void DocumentsListButton_Click(object sender, EventArgs e)

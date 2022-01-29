@@ -42,7 +42,7 @@ namespace Account_Docs_Workers
         /// записывает всех работников и их данные в список, через структуру Worker
         /// </summary>
         /// <param name="workers">пустой список работников</param>
-        public static void AddWorkersToList(List<Worker> workers, string path)
+        public static List<Worker> AddWorkersToList(List<Worker> workers, string path)
         {
             var workersFromFile = FileProvider.DeserializeWorker(path);
             foreach (var workerXElement in workersFromFile)
@@ -60,6 +60,8 @@ namespace Account_Docs_Workers
                 }
                 workers.Add(new Worker(unicNumber, name, surname, patronymic, birthDay, issuredDocuments));
             }
+
+            return workers;
         }
     }
 }

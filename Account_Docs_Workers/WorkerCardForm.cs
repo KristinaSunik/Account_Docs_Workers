@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Account_Docs_Workers
 {
-    public partial class WorkerCard : Form
+    public partial class WorkerCardForm : Form
     {
-        public WorkerCard()
+        public WorkerCardForm()
         {
             InitializeComponent();
         }

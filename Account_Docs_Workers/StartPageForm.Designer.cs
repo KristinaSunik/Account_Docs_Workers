@@ -1,7 +1,7 @@
 ﻿
 namespace Account_Docs_Workers
 {
-    partial class StartPage
+    partial class StartPageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Account_Docs_Workers
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPageForm));
             this.WorkersListButton = new System.Windows.Forms.Button();
             this.DocumentsListButton = new System.Windows.Forms.Button();
             this.AddNewWorkerButton = new System.Windows.Forms.Button();
