@@ -29,10 +29,20 @@ namespace Account_Docs_Workers
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
+            this.SuspendLayout();
+            // 
+            // StartPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.ClientSize = new System.Drawing.Size(1154, 755);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "StartPage";
+            this.Text = "Работники и выданные документы";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

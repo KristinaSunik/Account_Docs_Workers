@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -22,7 +23,8 @@ namespace Account_Docs_Workers
         }
 
         /// <summary>
-        /// полностью перезаписывает файл с данными о работниках и документах в формате XML
+        /// полностью перезаписывает/перезаписывает файл с данными о работниках и документах в формате XML    <br/>
+        /// по заданному пути
         /// </summary>
         /// <param name="path">путь к файлу</param>
         /// <param name="workers">список работников</param>
@@ -36,13 +38,17 @@ namespace Account_Docs_Workers
                 XElement name = new XElement("name", worker.Name);
                 XElement surname = new XElement("surname", worker.Surname);
                 XElement patronymic = new XElement("patronymic", worker.Patronymic);
-                XElement birthDay = new XElement("birthDay", worker.BirthDay);
+                XElement birthDay = new XElement("birthDay", worker.BirthDay.Ticks);
+                XElement documentsXElements = new XElement("issuedDocuments", "");
 
-                XElement documentsXElements = new XElement("issuedDocuments");
-                foreach (var document in worker.IssuedDocuments)
+                if (worker.IssuedDocuments.Count != 0)
                 {
-                    XElement documentXElement = new XElement("document", document);
-                    documentsXElements.Add(documentXElement);
+                    documentsXElements = new XElement("issuedDocuments");
+                    foreach (var document in worker.IssuedDocuments)
+                    {
+                        XElement documentXElement = new XElement("document", document);
+                        documentsXElements.Add(documentXElement);
+                    }
                 }
 
                 XElement workerXElement = new XElement("WORKER", unicNumber, name, surname, patronymic, birthDay, documentsXElements);
