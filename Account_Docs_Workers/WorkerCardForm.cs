@@ -16,7 +16,7 @@ namespace Account_Docs_Workers
         public WorkerCardForm(Worker worker)
         {
             currentWorker = worker;
-            
+
             InitializeComponent();
             InitializeMyControl();
 
@@ -27,7 +27,7 @@ namespace Account_Docs_Workers
         }
 
         private void InitializeMyControl()
-        { 
+        {
             workerFullNameTextBox.Text = $"{currentWorker.Surname} {currentWorker.Name} {currentWorker.Patronymic}";
             workerBirthDayTextBox.Text = currentWorker.BirthDay.ToShortDateString();
         }
@@ -43,6 +43,10 @@ namespace Account_Docs_Workers
                 currentWorker.IssuedDocuments.Add(new Document(DocumentNameTextBox.Text));
                 FileProvider.SerializeWorker(WorkerListForm.path, WorkerListForm.workers);
                 DocumentNameTextBox.Text = "";
+
+                issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].dateOfIssue);
+                
+
                 MessageBox.Show("Выдача документа зарегистрирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

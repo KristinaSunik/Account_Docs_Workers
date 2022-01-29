@@ -56,6 +56,8 @@ namespace Account_Docs_Workers
             this.workerListDataGridView.Size = new System.Drawing.Size(794, 426);
             this.workerListDataGridView.TabIndex = 0;
             this.workerListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
+            this.workerListDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
+            this.workerListDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
             // 
             // NameColumn
             // 
@@ -94,7 +96,7 @@ namespace Account_Docs_Workers
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.workerListDataGridView);
             this.Name = "WorkerListForm";
-            this.Text = "WorkerList";
+            this.Text = "Список работников";
             ((System.ComponentModel.ISupportInitialize)(this.workerListDataGridView)).EndInit();
             this.ResumeLayout(false);
 

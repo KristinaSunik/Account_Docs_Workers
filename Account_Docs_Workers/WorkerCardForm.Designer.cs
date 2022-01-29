@@ -66,7 +66,7 @@ namespace Account_Docs_Workers
             // 
             this.IssuedDocumentsLabel.AutoSize = true;
             this.IssuedDocumentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.IssuedDocumentsLabel.Location = new System.Drawing.Point(34, 146);
+            this.IssuedDocumentsLabel.Location = new System.Drawing.Point(34, 157);
             this.IssuedDocumentsLabel.Name = "IssuedDocumentsLabel";
             this.IssuedDocumentsLabel.Size = new System.Drawing.Size(267, 29);
             this.IssuedDocumentsLabel.TabIndex = 2;
@@ -82,7 +82,7 @@ namespace Account_Docs_Workers
             this.issuedDocumentsGridView.Name = "issuedDocumentsGridView";
             this.issuedDocumentsGridView.RowHeadersWidth = 62;
             this.issuedDocumentsGridView.RowTemplate.Height = 28;
-            this.issuedDocumentsGridView.Size = new System.Drawing.Size(590, 150);
+            this.issuedDocumentsGridView.Size = new System.Drawing.Size(749, 249);
             this.issuedDocumentsGridView.TabIndex = 3;
             // 
             // NameColumn
@@ -118,11 +118,11 @@ namespace Account_Docs_Workers
             // 
             // workerFullNameTextBox
             // 
-            this.workerFullNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.workerFullNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.workerFullNameTextBox.Location = new System.Drawing.Point(384, 56);
             this.workerFullNameTextBox.Name = "workerFullNameTextBox";
             this.workerFullNameTextBox.ReadOnly = true;
-            this.workerFullNameTextBox.Size = new System.Drawing.Size(368, 30);
+            this.workerFullNameTextBox.Size = new System.Drawing.Size(368, 32);
             this.workerFullNameTextBox.TabIndex = 6;
             // 
             // workerBirthDayTextBox
@@ -148,7 +148,7 @@ namespace Account_Docs_Workers
             this.Controls.Add(this.BirthDayLabel);
             this.Controls.Add(this.FullNameLabel);
             this.Name = "WorkerCardForm";
-            this.Text = "WorkerCard";
+            this.Text = "Карточка работника";
             ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
