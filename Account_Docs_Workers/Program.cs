@@ -10,8 +10,6 @@ namespace Account_Docs_Workers
 {
     static class Program
     {
-        public static List<Worker> workers = new List<Worker>();
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

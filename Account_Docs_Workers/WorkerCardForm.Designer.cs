@@ -32,11 +32,12 @@ namespace Account_Docs_Workers
             this.FullNameLabel = new System.Windows.Forms.Label();
             this.BirthDayLabel = new System.Windows.Forms.Label();
             this.IssuedDocumentsLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IssueDocumentButton = new System.Windows.Forms.Button();
+            this.issuedDocumentsGridView = new System.Windows.Forms.DataGridView();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.IssueDocumentButton = new System.Windows.Forms.Button();
+            this.DocumentNameTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // FullNameLabel
@@ -53,7 +54,7 @@ namespace Account_Docs_Workers
             // 
             this.BirthDayLabel.AutoSize = true;
             this.BirthDayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.BirthDayLabel.Location = new System.Drawing.Point(596, 109);
+            this.BirthDayLabel.Location = new System.Drawing.Point(596, 99);
             this.BirthDayLabel.Name = "BirthDayLabel";
             this.BirthDayLabel.Size = new System.Drawing.Size(156, 25);
             this.BirthDayLabel.TabIndex = 1;
@@ -69,27 +70,18 @@ namespace Account_Docs_Workers
             this.IssuedDocumentsLabel.TabIndex = 2;
             this.IssuedDocumentsLabel.Text = "Выданные документы";
             // 
-            // dataGridView1
+            // issuedDocumentsGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.issuedDocumentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.issuedDocumentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
             this.DateColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 189);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(369, 150);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // IssueDocumentButton
-            // 
-            this.IssueDocumentButton.Location = new System.Drawing.Point(39, 22);
-            this.IssueDocumentButton.Name = "IssueDocumentButton";
-            this.IssueDocumentButton.Size = new System.Drawing.Size(215, 31);
-            this.IssueDocumentButton.TabIndex = 4;
-            this.IssueDocumentButton.Text = "Выдать документ";
-            this.IssueDocumentButton.UseVisualStyleBackColor = true;
+            this.issuedDocumentsGridView.Location = new System.Drawing.Point(39, 189);
+            this.issuedDocumentsGridView.Name = "issuedDocumentsGridView";
+            this.issuedDocumentsGridView.RowHeadersWidth = 62;
+            this.issuedDocumentsGridView.RowTemplate.Height = 28;
+            this.issuedDocumentsGridView.Size = new System.Drawing.Size(590, 150);
+            this.issuedDocumentsGridView.TabIndex = 3;
             // 
             // NameColumn
             // 
@@ -105,19 +97,37 @@ namespace Account_Docs_Workers
             this.DateColumn.Name = "DateColumn";
             this.DateColumn.Width = 150;
             // 
+            // IssueDocumentButton
+            // 
+            this.IssueDocumentButton.Location = new System.Drawing.Point(39, 84);
+            this.IssueDocumentButton.Name = "IssueDocumentButton";
+            this.IssueDocumentButton.Size = new System.Drawing.Size(215, 31);
+            this.IssueDocumentButton.TabIndex = 4;
+            this.IssueDocumentButton.Text = "Выдать документ";
+            this.IssueDocumentButton.UseVisualStyleBackColor = true;
+            this.IssueDocumentButton.Click += new System.EventHandler(this.IssueDocumentButton_Click);
+            // 
+            // DocumentNameTextBox
+            // 
+            this.DocumentNameTextBox.Location = new System.Drawing.Point(39, 39);
+            this.DocumentNameTextBox.Name = "DocumentNameTextBox";
+            this.DocumentNameTextBox.Size = new System.Drawing.Size(215, 26);
+            this.DocumentNameTextBox.TabIndex = 5;
+            // 
             // WorkerCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DocumentNameTextBox);
             this.Controls.Add(this.IssueDocumentButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.issuedDocumentsGridView);
             this.Controls.Add(this.IssuedDocumentsLabel);
             this.Controls.Add(this.BirthDayLabel);
             this.Controls.Add(this.FullNameLabel);
             this.Name = "WorkerCardForm";
             this.Text = "WorkerCard";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,9 +138,10 @@ namespace Account_Docs_Workers
         private System.Windows.Forms.Label FullNameLabel;
         private System.Windows.Forms.Label BirthDayLabel;
         private System.Windows.Forms.Label IssuedDocumentsLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView issuedDocumentsGridView;
         private System.Windows.Forms.Button IssueDocumentButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
+        private System.Windows.Forms.TextBox DocumentNameTextBox;
     }
 }
