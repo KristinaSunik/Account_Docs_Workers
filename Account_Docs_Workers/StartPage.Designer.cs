@@ -45,6 +45,7 @@ namespace Account_Docs_Workers
             this.WorkersListButton.TabIndex = 0;
             this.WorkersListButton.Text = "Список работников";
             this.WorkersListButton.UseVisualStyleBackColor = false;
+            this.WorkersListButton.Click += new System.EventHandler(this.WorkersListButton_Click);
             // 
             // DocumentsListButton
             // 
@@ -57,6 +58,7 @@ namespace Account_Docs_Workers
             this.DocumentsListButton.TabIndex = 1;
             this.DocumentsListButton.Text = "Список документов";
             this.DocumentsListButton.UseVisualStyleBackColor = false;
+            this.DocumentsListButton.Click += new System.EventHandler(this.DocumentsListButton_Click);
             // 
             // AddNewWorkerButton
             // 
@@ -68,6 +70,7 @@ namespace Account_Docs_Workers
             this.AddNewWorkerButton.TabIndex = 2;
             this.AddNewWorkerButton.Text = "Добавить нового работника";
             this.AddNewWorkerButton.UseVisualStyleBackColor = false;
+            this.AddNewWorkerButton.Click += new System.EventHandler(this.AddNewWorkerButton_Click);
             // 
             // StartPage
             // 

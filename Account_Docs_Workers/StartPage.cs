@@ -16,5 +16,20 @@ namespace Account_Docs_Workers
         {
             InitializeComponent();
         }
+
+        private void WorkersListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DocumentsListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewWorkerButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
