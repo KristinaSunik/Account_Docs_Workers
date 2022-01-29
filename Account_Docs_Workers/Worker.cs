@@ -53,16 +53,12 @@ namespace Account_Docs_Workers
                 string patronymic = workerXElement.Element("patronymic").Value;
                 DateTime birthDay = new DateTime(Convert.ToInt64(workerXElement.Element("birthDay").Value));
                 List<Document> issuredDocuments = new List<Document>();
-                //var documentsXElement = workerXElement.Element();
-                //foreach (var item in documentsXElement)
-                //{
+                var documentsXElement = workerXElement.Element("issuedDocuments").Descendants("document");
+                foreach (var doc in documentsXElement)
+                {
+                    issuredDocuments.Add(new Document(doc.Element("docName").Value, new DateTime(Convert.ToInt64(doc.Element("docDate").Value))));
+                }
 
-                //    var element = workerXElement.Element("issuedDocuments").Value;
-                //    if (element != "")
-                //    {
-                //        //issuredDocuments = workerXElement.Element("issuedDocuments").Value;
-                //    }
-                //}
                 workers.Add(new Worker(unicNumber, name, surname, patronymic, birthDay, issuredDocuments));
             }
         }

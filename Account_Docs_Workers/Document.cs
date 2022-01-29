@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Account_Docs_Workers
 {
@@ -11,10 +7,18 @@ namespace Account_Docs_Workers
         public string name { get; private set; }
         public DateTime dateOfIssue { get; private set; }
 
+        /// <summary> Выдача документа нового </summary>
         public Document(string name)
         {
             this.name = name;
             dateOfIssue = DateTime.Now;
+        }
+
+        /// <summary> Чтение из файла </summary>
+        public Document(string name, DateTime date)
+        {
+            this.name = name;
+            dateOfIssue = date;
         }
     }
 }

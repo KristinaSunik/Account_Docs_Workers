@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Account_Docs_Workers
 {
     public partial class WorkerListForm : Form
     {
-        private List<Worker> workers = new List<Worker>();
+        public static List<Worker> workers = new List<Worker>();
+        public static string path;
 
         public WorkerListForm()
         {
             InitializeComponent();
-            string path = Directory.GetCurrentDirectory() + "Workers_Documents.xml";
+            path = Directory.GetCurrentDirectory() + "Workers_Documents.xml";
             //workers.Add(new Worker("Кристина", "Шуканова", "Олеговна", new DateTime(1988, 9, 14)));
             //workers.Add(new Worker("Никифороов", "Андрей", "Алексеевич", new DateTime(1985, 10, 25)));
             //workers.Add(new Worker("Иванов", "Иван", "Иванович", new DateTime(1980, 2, 7)));
 
-            //var workersXElement = FileProvider.DeserializeWorker(path);
-            Worker.AddWorkersToList(ref workers, path);
+            //FileProvider.SerializeWorker(path, workers);
+            if (workers.Count == 0)
+            {
+                Worker.AddWorkersToList(ref workers, path);
+            }
 
             foreach (var worker in workers)
             {

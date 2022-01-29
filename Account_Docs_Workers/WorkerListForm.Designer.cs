@@ -50,6 +50,7 @@ namespace Account_Docs_Workers
             this.PatronymicColumn});
             this.workerListDataGridView.Location = new System.Drawing.Point(-1, 12);
             this.workerListDataGridView.Name = "workerListDataGridView";
+            this.workerListDataGridView.ReadOnly = true;
             this.workerListDataGridView.RowHeadersWidth = 62;
             this.workerListDataGridView.RowTemplate.Height = 28;
             this.workerListDataGridView.Size = new System.Drawing.Size(794, 426);
@@ -63,6 +64,7 @@ namespace Account_Docs_Workers
             this.NameColumn.HeaderText = "Имя";
             this.NameColumn.MinimumWidth = 8;
             this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
             this.NameColumn.Width = 150;
             // 
             // SurnameColumn
@@ -72,6 +74,7 @@ namespace Account_Docs_Workers
             this.SurnameColumn.HeaderText = "Фамилия";
             this.SurnameColumn.MinimumWidth = 8;
             this.SurnameColumn.Name = "SurnameColumn";
+            this.SurnameColumn.ReadOnly = true;
             this.SurnameColumn.Width = 150;
             // 
             // PatronymicColumn
@@ -81,6 +84,7 @@ namespace Account_Docs_Workers
             this.PatronymicColumn.HeaderText = "Отчество";
             this.PatronymicColumn.MinimumWidth = 8;
             this.PatronymicColumn.Name = "PatronymicColumn";
+            this.PatronymicColumn.ReadOnly = true;
             this.PatronymicColumn.Width = 150;
             // 
             // WorkerListForm
