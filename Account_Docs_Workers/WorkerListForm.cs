@@ -6,9 +6,11 @@ namespace Account_Docs_Workers
     public partial class WorkerListForm : Form
     {
         private static List<Worker> _workers = new List<Worker>();
+
         public WorkerListForm(List <Worker> workers)
         {
             _workers = workers;
+
             InitializeComponent();
            
             foreach (var worker in workers)

@@ -45,7 +45,7 @@ namespace Account_Docs_Workers
 
         private void AddNewWorkerButton_Click(object sender, EventArgs e)
         {
-            var addNewWorkerForm = new AddNewWorkerForm(workers);
+            var addNewWorkerForm = new AddNewWorkerForm();
             addNewWorkerForm.Show();
         }
     }

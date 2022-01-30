@@ -12,7 +12,7 @@ namespace Account_Docs_Workers
 {
     public partial class AddNewWorkerForm : Form
     {
-        public AddNewWorkerForm(List<Worker> workers)
+        public AddNewWorkerForm()
         {
             InitializeComponent();
         }
@@ -33,9 +33,18 @@ namespace Account_Docs_Workers
                     var newWorker = new Worker(NameTextBox.Text, SurnameTextBox.Text, PatronymicTextBox.Text, birthDay);
                     StartPageForm.workers.Add(newWorker);
                     FileProvider.AddWorkerToFile(StartPageForm.path, newWorker);
+                    RefreshControls();
+                    MessageBox.Show("Работник добавлен", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
 
+        private void RefreshControls()
+        {
+            NameTextBox.Text = "";
+            SurnameTextBox.Text = "";
+            PatronymicTextBox.Text = "";
+            BirthDayTextBox.Text = "";
         }
 
         private bool CheckInputData()
@@ -94,7 +103,7 @@ namespace Account_Docs_Workers
                                 {
                                     if (DateTime.TryParse(dataFromUser, out birthDay))
                                     {
-
+                                        return birthDay;
                                     }
                                 }
                                 else

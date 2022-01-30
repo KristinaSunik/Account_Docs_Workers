@@ -71,18 +71,17 @@ namespace Account_Docs_Workers
             XElement name = new XElement("name", worker.Name);
             XElement surname = new XElement("surname", worker.Surname);
             XElement patronymic = new XElement("patronymic", worker.Patronymic);
-            XElement birthDay = new XElement("birthDay", worker.BirthDay);
+            XElement birthDay = new XElement("birthDay", Convert.ToInt64(worker.BirthDay.Ticks));
 
-            XElement documentsXElements = new XElement("issuedDocuments", "");
+            XElement documentsXElements = new XElement("issuedDocuments");
 
             if (worker.IssuedDocuments.Count != 0)
             {
-                documentsXElements = new XElement("issuedDocuments");
                 foreach (var document in worker.IssuedDocuments)
                 {
                     XElement docName = new XElement("docName", document.name);
-                    XElement docDate = new XElement("docDate", document.dateOfIssue);
-                    documentsXElements.Add(new XElement("document", docName, Convert.ToInt64(docDate)));
+                    XElement docDate = new XElement("docDate", Convert.ToInt64(document.dateOfIssue.Ticks));
+                    documentsXElements.Add(new XElement("document", docName, docDate));
                 }
             }
 
