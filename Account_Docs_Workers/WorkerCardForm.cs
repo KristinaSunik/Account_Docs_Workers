@@ -37,7 +37,7 @@ namespace Account_Docs_Workers
             else
             {
                 currentWorker.IssuedDocuments.Add(new Document(DocumentNameTextBox.Text));
-                FileProvider.SerializeWorker(WorkerListForm.path, WorkerListForm.workers);
+                FileProvider.SerializeWorker(StartPageForm.path, StartPageForm.workers);
                 DocumentNameTextBox.Text = "";
                 issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].dateOfIssue);
                 AutoSizeColumns();

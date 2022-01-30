@@ -87,6 +87,9 @@
     <Compile Include="WorkerListForm.Designer.cs">
       <DependentUpon>WorkerListForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DocumentsListForm.resx">
+      <DependentUpon>DocumentsListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

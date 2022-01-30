@@ -12,7 +12,7 @@ namespace Account_Docs_Workers
 {
     public partial class AddNewWorkerForm : Form
     {
-        public AddNewWorkerForm()
+        public AddNewWorkerForm(List<Worker> workers)
         {
             InitializeComponent();
         }
