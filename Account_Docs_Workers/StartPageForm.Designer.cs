@@ -62,7 +62,7 @@ namespace Account_Docs_Workers
             // 
             // AddNewWorkerButton
             // 
-            this.AddNewWorkerButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.AddNewWorkerButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.AddNewWorkerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.AddNewWorkerButton.Location = new System.Drawing.Point(35, 290);
             this.AddNewWorkerButton.Name = "AddNewWorkerButton";

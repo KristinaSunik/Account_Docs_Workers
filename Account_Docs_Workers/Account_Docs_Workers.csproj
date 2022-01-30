@@ -53,12 +53,6 @@
       <DependentUpon>AddNewWorkerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Document.cs" />
-    <Compile Include="DocumentList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DocumentList.Designer.cs">
-      <DependentUpon>DocumentList.cs</DependentUpon>
-    </Compile>
     <Compile Include="DocumentsListForm.cs">
       <SubType>Form</SubType>
     </Compile>

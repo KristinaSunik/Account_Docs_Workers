@@ -31,6 +31,7 @@ namespace Account_Docs_Workers
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,17 +45,24 @@ namespace Account_Docs_Workers
             // 
             // workerListDataGridView
             // 
+            this.workerListDataGridView.AllowUserToAddRows = false;
+            this.workerListDataGridView.AllowUserToDeleteRows = false;
+            this.workerListDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.workerListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workerListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
             this.SurnameColumn,
             this.PatronymicColumn});
-            this.workerListDataGridView.Location = new System.Drawing.Point(-1, 12);
+            this.workerListDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.workerListDataGridView.Location = new System.Drawing.Point(-1, 15);
+            this.workerListDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.workerListDataGridView.Name = "workerListDataGridView";
             this.workerListDataGridView.ReadOnly = true;
             this.workerListDataGridView.RowHeadersWidth = 62;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.workerListDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.workerListDataGridView.RowTemplate.Height = 28;
-            this.workerListDataGridView.Size = new System.Drawing.Size(789, 426);
+            this.workerListDataGridView.Size = new System.Drawing.Size(529, 317);
             this.workerListDataGridView.TabIndex = 0;
             this.workerListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
             this.workerListDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
@@ -92,11 +100,13 @@ namespace Account_Docs_Workers
             // 
             // WorkerListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(516, 333);
             this.Controls.Add(this.workerListDataGridView);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WorkerListForm";
             this.Text = "Список работников";
             ((System.ComponentModel.ISupportInitialize)(this.workerListDataGridView)).EndInit();

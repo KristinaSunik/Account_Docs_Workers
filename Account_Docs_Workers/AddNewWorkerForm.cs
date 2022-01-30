@@ -19,16 +19,10 @@ namespace Account_Docs_Workers
 
         private void SaveWorkerButton_Click(object sender, EventArgs e)
         {
-            DateTime birthDay;
-
             if (CheckInputData())
             {
-                birthDay = CheckDataFromUser(BirthDayTextBox.Text);
-                if (birthDay == new DateTime(0))
-                {
-                    MessageBox.Show("Формат даты неверен. Введите в формате dd.dd.dddd", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
+                DateTime birthDay = CheckDataFromUser(BirthDayTextBox.Text);
+                if (birthDay != new DateTime(0))
                 {
                     var newWorker = new Worker(NameTextBox.Text, SurnameTextBox.Text, PatronymicTextBox.Text, birthDay);
                     StartPageForm.workers.Add(newWorker);
@@ -79,53 +73,15 @@ namespace Account_Docs_Workers
 
         private DateTime CheckDataFromUser(string dataFromUser)
         {
-            int date;
-            int month;
-            int year;
             DateTime birthDay = new DateTime(0);
             dataFromUser = dataFromUser.Replace(" ", "");
-            string[] ss = dataFromUser.Split(',', '.');
+            string[] splitedDateFromUser = dataFromUser.Split(',', '.');
 
-            if (ss.Length == 3)
+            if (splitedDateFromUser.Length == 3)
             {
                 try
                 {
-                    if (int.TryParse(ss[0], out date) &&
-                    int.TryParse(ss[1], out month) &&
-                    int.TryParse(ss[2], out year))
-                    {
-                        if (date >= 1 && date <= 31)
-                        {
-                            if (month >= 1 && month <= 12)
-                            {
-                                //больше ста лет навряд ли человеку будет
-                                if (year >= DateTime.Now.Year - 100 && year <= DateTime.Now.Year)
-                                {
-                                    if (DateTime.TryParse(dataFromUser, out birthDay))
-                                    {
-                                        return birthDay;
-                                    }
-                                }
-                                else
-                                {
-                                    throw new FormatException
-                                      ($"Год может быть в диапазоне от {DateTime.Now.Year - 100} до {DateTime.Now.Year}");
-                                }
-                            }
-                            else
-                            {
-                                throw new FormatException("Месяц может быть в диапазоне от 1 до 12");
-                            }
-                        }
-                        else
-                        {
-                            throw new FormatException("Число может быть в диапазоне от 1 до 31");
-                        }
-                    }
-                    else
-                    {
-                        throw new FormatException("Формат даты должен быть **.**.****");
-                    }
+                    birthDay = TryParseDate(dataFromUser, splitedDateFromUser);
                 }
                 catch (FormatException ex)
                 {
@@ -133,6 +89,52 @@ namespace Account_Docs_Workers
 
                     return birthDay;
                 }
+            }
+
+            return birthDay;
+        }
+
+        private static DateTime TryParseDate(string dataFromUser, string[] splitedDateFromUser)
+        {
+            DateTime birthDay;
+
+            if (int.TryParse(splitedDateFromUser[0], out int date) &&
+                int.TryParse(splitedDateFromUser[1], out int month) &&
+                int.TryParse(splitedDateFromUser[2], out int year))
+            {
+                if (date >= 1 && date <= 31)
+                {
+                    if (month >= 1 && month <= 12)
+                    {
+                        //больше ста лет навряд ли человеку будет
+                        if (year >= DateTime.Now.Year - 100 && year <= DateTime.Now.Year)
+                        {
+                            if (!DateTime.TryParse(dataFromUser, out birthDay) || birthDay > DateTime.Now)
+                            {
+                                birthDay = new DateTime(0);
+                                MessageBox.Show("Формат даты неверен. Введите в формате dd.dd.dddd" + Environment.NewLine +
+                                    "Возможно такой даты просто не существует", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            throw new FormatException
+                              ($"Год может быть в диапазоне от {DateTime.Now.Year - 100} до {DateTime.Now.Year}");
+                        }
+                    }
+                    else
+                    {
+                        throw new FormatException("Месяц может быть в диапазоне от 1 до 12");
+                    }
+                }
+                else
+                {
+                    throw new FormatException("Число может быть в диапазоне от 1 до 31");
+                }
+            }
+            else
+            {
+                throw new FormatException("Формат даты должен быть **.**.****");
             }
 
             return birthDay;
