@@ -87,6 +87,9 @@
     <Compile Include="WorkerListForm.Designer.cs">
       <DependentUpon>WorkerListForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewWorkerForm.resx">
+      <DependentUpon>AddNewWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DocumentsListForm.resx">
       <DependentUpon>DocumentsListForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,6 +17,7 @@ namespace Account_Docs_Workers
             {
                 issuedDocumentsGridView.Rows.Add(document.name, document.dateOfIssue);
             }
+
             AutoSizeColumns();
         }
 
