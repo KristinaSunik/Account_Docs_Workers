@@ -49,7 +49,7 @@ namespace Account_Docs_Workers
             // 
             // DocumentsListButton
             // 
-            this.DocumentsListButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DocumentsListButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.DocumentsListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.DocumentsListButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DocumentsListButton.Location = new System.Drawing.Point(35, 145);
@@ -72,7 +72,7 @@ namespace Account_Docs_Workers
             this.AddNewWorkerButton.UseVisualStyleBackColor = false;
             this.AddNewWorkerButton.Click += new System.EventHandler(this.AddNewWorkerButton_Click);
             // 
-            // StartPage
+            // StartPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@ namespace Account_Docs_Workers
             this.Controls.Add(this.DocumentsListButton);
             this.Controls.Add(this.WorkersListButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "StartPage";
+            this.Name = "StartPageForm";
             this.Text = "Работники и выданные документы";
             this.ResumeLayout(false);
 

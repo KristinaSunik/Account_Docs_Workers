@@ -27,6 +27,8 @@ namespace Account_Docs_Workers
             {
                 workerListDataGridView.Rows.Add(worker.Name, worker.Surname, worker.Patronymic);
             }
+
+            AutosizeColumn();
         }
 
         private void workerListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,6 +37,14 @@ namespace Account_Docs_Workers
 
             var workerCardForm = new WorkerCardForm(currentWorker);
             workerCardForm.Show();
+        }
+
+        private void AutosizeColumn()
+        {
+            for (int i = 0; i < workerListDataGridView.Columns.Count; i++)
+            {
+                workerListDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
         }
     }
 }

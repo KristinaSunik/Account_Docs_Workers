@@ -29,7 +29,8 @@ namespace Account_Docs_Workers
         /// </summary>
         private void InitializeComponent()
         {
-            this.FullNameLabel = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerCardForm));
+            this.SurNameLabel = new System.Windows.Forms.Label();
             this.BirthDayLabel = new System.Windows.Forms.Label();
             this.IssuedDocumentsLabel = new System.Windows.Forms.Label();
             this.issuedDocumentsGridView = new System.Windows.Forms.DataGridView();
@@ -37,26 +38,26 @@ namespace Account_Docs_Workers
             this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDocumentButton = new System.Windows.Forms.Button();
             this.DocumentNameTextBox = new System.Windows.Forms.TextBox();
-            this.workerFullNameTextBox = new System.Windows.Forms.TextBox();
-            this.workerBirthDayTextBox = new System.Windows.Forms.TextBox();
+            this.NamePatronymicLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // FullNameLabel
+            // SurNameLabel
             // 
-            this.FullNameLabel.AutoSize = true;
-            this.FullNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.FullNameLabel.Location = new System.Drawing.Point(682, 24);
-            this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(70, 29);
-            this.FullNameLabel.TabIndex = 0;
-            this.FullNameLabel.Text = "ФИО";
+            this.SurNameLabel.AutoSize = true;
+            this.SurNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.SurNameLabel.Location = new System.Drawing.Point(426, 39);
+            this.SurNameLabel.Name = "SurNameLabel";
+            this.SurNameLabel.Size = new System.Drawing.Size(158, 36);
+            this.SurNameLabel.TabIndex = 0;
+            this.SurNameLabel.Text = "Фамилия";
+            this.SurNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // BirthDayLabel
             // 
             this.BirthDayLabel.AutoSize = true;
             this.BirthDayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.BirthDayLabel.Location = new System.Drawing.Point(596, 99);
+            this.BirthDayLabel.Location = new System.Drawing.Point(427, 134);
             this.BirthDayLabel.Name = "BirthDayLabel";
             this.BirthDayLabel.Size = new System.Drawing.Size(161, 25);
             this.BirthDayLabel.TabIndex = 1;
@@ -65,24 +66,33 @@ namespace Account_Docs_Workers
             // IssuedDocumentsLabel
             // 
             this.IssuedDocumentsLabel.AutoSize = true;
-            this.IssuedDocumentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.IssuedDocumentsLabel.Location = new System.Drawing.Point(34, 157);
+            this.IssuedDocumentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.IssuedDocumentsLabel.Location = new System.Drawing.Point(34, 192);
             this.IssuedDocumentsLabel.Name = "IssuedDocumentsLabel";
-            this.IssuedDocumentsLabel.Size = new System.Drawing.Size(267, 29);
+            this.IssuedDocumentsLabel.Size = new System.Drawing.Size(219, 25);
             this.IssuedDocumentsLabel.TabIndex = 2;
             this.IssuedDocumentsLabel.Text = "Выданные документы";
             // 
             // issuedDocumentsGridView
             // 
+            this.issuedDocumentsGridView.AllowUserToAddRows = false;
+            this.issuedDocumentsGridView.AllowUserToDeleteRows = false;
+            this.issuedDocumentsGridView.AllowUserToOrderColumns = true;
+            this.issuedDocumentsGridView.AllowUserToResizeRows = false;
+            this.issuedDocumentsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.issuedDocumentsGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.issuedDocumentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.issuedDocumentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
             this.DateColumn});
-            this.issuedDocumentsGridView.Location = new System.Drawing.Point(39, 189);
+            this.issuedDocumentsGridView.Location = new System.Drawing.Point(39, 220);
+            this.issuedDocumentsGridView.MultiSelect = false;
             this.issuedDocumentsGridView.Name = "issuedDocumentsGridView";
-            this.issuedDocumentsGridView.RowHeadersWidth = 62;
+            this.issuedDocumentsGridView.ReadOnly = true;
+            this.issuedDocumentsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.issuedDocumentsGridView.RowTemplate.Height = 28;
-            this.issuedDocumentsGridView.Size = new System.Drawing.Size(749, 249);
+            this.issuedDocumentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.issuedDocumentsGridView.Size = new System.Drawing.Size(502, 218);
             this.issuedDocumentsGridView.TabIndex = 3;
             // 
             // NameColumn
@@ -90,20 +100,23 @@ namespace Account_Docs_Workers
             this.NameColumn.HeaderText = "Название";
             this.NameColumn.MinimumWidth = 8;
             this.NameColumn.Name = "NameColumn";
-            this.NameColumn.Width = 150;
+            this.NameColumn.ReadOnly = true;
+            this.NameColumn.Width = 119;
             // 
             // DateColumn
             // 
             this.DateColumn.HeaderText = "Дата выдачи";
             this.DateColumn.MinimumWidth = 8;
             this.DateColumn.Name = "DateColumn";
-            this.DateColumn.Width = 150;
+            this.DateColumn.ReadOnly = true;
+            this.DateColumn.Width = 146;
             // 
             // IssueDocumentButton
             // 
+            this.IssueDocumentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.IssueDocumentButton.Location = new System.Drawing.Point(39, 84);
             this.IssueDocumentButton.Name = "IssueDocumentButton";
-            this.IssueDocumentButton.Size = new System.Drawing.Size(215, 31);
+            this.IssueDocumentButton.Size = new System.Drawing.Size(281, 44);
             this.IssueDocumentButton.TabIndex = 4;
             this.IssueDocumentButton.Text = "Выдать документ";
             this.IssueDocumentButton.UseVisualStyleBackColor = true;
@@ -113,40 +126,33 @@ namespace Account_Docs_Workers
             // 
             this.DocumentNameTextBox.Location = new System.Drawing.Point(39, 39);
             this.DocumentNameTextBox.Name = "DocumentNameTextBox";
-            this.DocumentNameTextBox.Size = new System.Drawing.Size(215, 26);
+            this.DocumentNameTextBox.Size = new System.Drawing.Size(281, 26);
             this.DocumentNameTextBox.TabIndex = 5;
             // 
-            // workerFullNameTextBox
+            // NamePatronymicLabel
             // 
-            this.workerFullNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.workerFullNameTextBox.Location = new System.Drawing.Point(384, 56);
-            this.workerFullNameTextBox.Name = "workerFullNameTextBox";
-            this.workerFullNameTextBox.ReadOnly = true;
-            this.workerFullNameTextBox.Size = new System.Drawing.Size(368, 32);
-            this.workerFullNameTextBox.TabIndex = 6;
-            // 
-            // workerBirthDayTextBox
-            // 
-            this.workerBirthDayTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.workerBirthDayTextBox.Location = new System.Drawing.Point(642, 137);
-            this.workerBirthDayTextBox.Name = "workerBirthDayTextBox";
-            this.workerBirthDayTextBox.ReadOnly = true;
-            this.workerBirthDayTextBox.Size = new System.Drawing.Size(110, 30);
-            this.workerBirthDayTextBox.TabIndex = 7;
+            this.NamePatronymicLabel.AutoSize = true;
+            this.NamePatronymicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.NamePatronymicLabel.Location = new System.Drawing.Point(427, 90);
+            this.NamePatronymicLabel.Name = "NamePatronymicLabel";
+            this.NamePatronymicLabel.Size = new System.Drawing.Size(185, 30);
+            this.NamePatronymicLabel.TabIndex = 6;
+            this.NamePatronymicLabel.Text = "Имя Отчество";
+            this.NamePatronymicLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // WorkerCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.workerBirthDayTextBox);
-            this.Controls.Add(this.workerFullNameTextBox);
+            this.ClientSize = new System.Drawing.Size(795, 450);
+            this.Controls.Add(this.NamePatronymicLabel);
             this.Controls.Add(this.DocumentNameTextBox);
             this.Controls.Add(this.IssueDocumentButton);
             this.Controls.Add(this.issuedDocumentsGridView);
             this.Controls.Add(this.IssuedDocumentsLabel);
             this.Controls.Add(this.BirthDayLabel);
-            this.Controls.Add(this.FullNameLabel);
+            this.Controls.Add(this.SurNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkerCardForm";
             this.Text = "Карточка работника";
             ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).EndInit();
@@ -157,7 +163,7 @@ namespace Account_Docs_Workers
 
         #endregion
 
-        private System.Windows.Forms.Label FullNameLabel;
+        private System.Windows.Forms.Label SurNameLabel;
         private System.Windows.Forms.Label BirthDayLabel;
         private System.Windows.Forms.Label IssuedDocumentsLabel;
         private System.Windows.Forms.DataGridView issuedDocumentsGridView;
@@ -165,7 +171,6 @@ namespace Account_Docs_Workers
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
         private System.Windows.Forms.TextBox DocumentNameTextBox;
-        private System.Windows.Forms.TextBox workerFullNameTextBox;
-        private System.Windows.Forms.TextBox workerBirthDayTextBox;
+        private System.Windows.Forms.Label NamePatronymicLabel;
     }
 }

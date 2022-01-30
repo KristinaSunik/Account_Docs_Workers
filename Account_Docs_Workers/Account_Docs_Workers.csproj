@@ -46,12 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewWorkerForm.Designer.cs">
+      <DependentUpon>AddNewWorkerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Document.cs" />
     <Compile Include="DocumentList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DocumentList.Designer.cs">
       <DependentUpon>DocumentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentsListForm.Designer.cs">
+      <DependentUpon>DocumentsListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileProvider.cs" />
     <Compile Include="StartPageForm.cs">

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Account_Docs_Workers
@@ -18,18 +11,21 @@ namespace Account_Docs_Workers
             currentWorker = worker;
 
             InitializeComponent();
-            InitializeMyControl();
+            InitializeMyControls();
 
             foreach (var document in worker.IssuedDocuments)
             {
                 issuedDocumentsGridView.Rows.Add(document.name, document.dateOfIssue);
             }
+            AutoSizeColumns();
         }
 
-        private void InitializeMyControl()
+        private void InitializeMyControls()
         {
-            workerFullNameTextBox.Text = $"{currentWorker.Surname} {currentWorker.Name} {currentWorker.Patronymic}";
-            workerBirthDayTextBox.Text = currentWorker.BirthDay.ToShortDateString();
+            DocumentNameTextBox.Focus();
+            SurNameLabel.Text = $"{currentWorker.Surname}";
+            NamePatronymicLabel.Text = $"{currentWorker.Name} {currentWorker.Patronymic}";
+            BirthDayLabel.Text = currentWorker.BirthDay.ToShortDateString();
         }
 
         private void IssueDocumentButton_Click(object sender, EventArgs e)
@@ -43,12 +39,20 @@ namespace Account_Docs_Workers
                 currentWorker.IssuedDocuments.Add(new Document(DocumentNameTextBox.Text));
                 FileProvider.SerializeWorker(WorkerListForm.path, WorkerListForm.workers);
                 DocumentNameTextBox.Text = "";
-
                 issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].dateOfIssue);
-                
+                AutoSizeColumns();
 
                 MessageBox.Show("Выдача документа зарегистрирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void AutoSizeColumns()
+        {
+            for (int i = 0; i < issuedDocumentsGridView.Columns.Count; i++)
+            {
+                issuedDocumentsGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+        }
+
     }
 }

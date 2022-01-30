@@ -25,12 +25,14 @@ namespace Account_Docs_Workers
 
         private void DocumentsListButton_Click(object sender, EventArgs e)
         {
-
+            var documrntsListForm = new DocumentsListForm();
+            documrntsListForm.Show();
         }
 
         private void AddNewWorkerButton_Click(object sender, EventArgs e)
         {
-
+            var addNewWorkerForm = new AddNewWorkerForm();
+            addNewWorkerForm.Show();
         }
     }
 }

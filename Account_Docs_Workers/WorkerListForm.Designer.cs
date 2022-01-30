@@ -34,6 +34,7 @@ namespace Account_Docs_Workers
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerListForm));
             this.workerListDataGridView = new System.Windows.Forms.DataGridView();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +54,7 @@ namespace Account_Docs_Workers
             this.workerListDataGridView.ReadOnly = true;
             this.workerListDataGridView.RowHeadersWidth = 62;
             this.workerListDataGridView.RowTemplate.Height = 28;
-            this.workerListDataGridView.Size = new System.Drawing.Size(794, 426);
+            this.workerListDataGridView.Size = new System.Drawing.Size(789, 426);
             this.workerListDataGridView.TabIndex = 0;
             this.workerListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
             this.workerListDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workerListDataGridView_CellContentClick);
@@ -95,6 +96,7 @@ namespace Account_Docs_Workers
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.workerListDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkerListForm";
             this.Text = "Список работников";
             ((System.ComponentModel.ISupportInitialize)(this.workerListDataGridView)).EndInit();
