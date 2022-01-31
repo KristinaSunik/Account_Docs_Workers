@@ -99,6 +99,11 @@ namespace Account_Docs_Workers.Forms
                     return birthDay;
                 }
             }
+            else
+            {
+                MessageBox.Show("Формат даты неверен. Введите в формате dd.dd.dddd", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
 
             return birthDay;
         }

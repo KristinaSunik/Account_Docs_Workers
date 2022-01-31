@@ -29,6 +29,7 @@ namespace Account_Docs_Workers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocumentNameChooseForm));
             this.ChooseNameForDocumentDataGridView = new System.Windows.Forms.DataGridView();
             this.DocumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ChooseNameForDocumentDataGridView)).BeginInit();
@@ -68,6 +69,7 @@ namespace Account_Docs_Workers.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 350);
             this.Controls.Add(this.ChooseNameForDocumentDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DocumentNameChooseForm";
             this.Text = "Выберите документ для выдачи";
             ((System.ComponentModel.ISupportInitialize)(this.ChooseNameForDocumentDataGridView)).EndInit();
