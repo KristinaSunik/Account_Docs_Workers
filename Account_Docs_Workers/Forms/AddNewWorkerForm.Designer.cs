@@ -123,7 +123,7 @@ namespace Account_Docs_Workers.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 410);
+            this.ClientSize = new System.Drawing.Size(524, 410);
             this.Controls.Add(this.BirthDayLabel);
             this.Controls.Add(this.PatronymicLabel);
             this.Controls.Add(this.SurnameLabel);
