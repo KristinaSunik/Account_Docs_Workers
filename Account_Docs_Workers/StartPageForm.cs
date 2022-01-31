@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Account_Docs_Workers
@@ -40,12 +34,14 @@ namespace Account_Docs_Workers
             workers.Add(new Worker("Кристина", "Шуканова", "Олеговна", new DateTime(1988, 9, 14)));
             workers.Add(new Worker("Никифороов", "Андрей", "Алексеевич", new DateTime(1985, 10, 25)));
             workers.Add(new Worker("Иванов", "Иван", "Иванович", new DateTime(1980, 2, 7)));
+            
             documents = new List<string>
             {   "Схема тайных ходов Кремля",
                 "Обязательство о неразглашении №12",
                 "Военная тайна №52",
                 "Архив пациентов №10",
                 "Дело №43"};
+
             FileProvider.SerializeWorker(pathWorkers, workers);
             FileProvider.SerializeDocument(pathDocuments, documents);
         }

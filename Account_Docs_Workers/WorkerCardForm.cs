@@ -20,7 +20,6 @@ namespace Account_Docs_Workers
             }
 
             AutoSizeColumns();
-            DocumentNameTextBox.Text = DocumentNameChooseForm.choosedDoc;
         }
 
         private void InitializeMyControls()
@@ -51,10 +50,9 @@ namespace Account_Docs_Workers
                 currentWorker.IssuedDocuments.Add(new Document(DocumentNameTextBox.Text));
                 FileProvider.SerializeWorker(StartPageForm.pathWorkers, StartPageForm.workers);
                 DocumentNameTextBox.Text = "";
-                DocumentNameChooseForm.choosedDoc = "";
                 issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].Name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].DateOfIssue);
                 AutoSizeColumns();
-
+                this.Refresh();
                 MessageBox.Show("Выдача документа зарегистрирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

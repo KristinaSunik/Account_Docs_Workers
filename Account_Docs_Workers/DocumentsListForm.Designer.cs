@@ -49,7 +49,7 @@ namespace Account_Docs_Workers
             this.documentsListDataGridView.ReadOnly = true;
             this.documentsListDataGridView.RowHeadersWidth = 62;
             this.documentsListDataGridView.RowTemplate.Height = 28;
-            this.documentsListDataGridView.Size = new System.Drawing.Size(803, 448);
+            this.documentsListDataGridView.Size = new System.Drawing.Size(998, 448);
             this.documentsListDataGridView.TabIndex = 0;
             // 
             // DocumentNameColumn
@@ -80,7 +80,7 @@ namespace Account_Docs_Workers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(987, 450);
             this.Controls.Add(this.documentsListDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DocumentsListForm";

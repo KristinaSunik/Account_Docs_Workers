@@ -14,11 +14,19 @@ namespace Account_Docs_Workers
         /// <param name="path">путь к файлу для чтения</param>
         public static List<XElement> Deserialize(string path, string descendant)
         {
-            string xml = File.ReadAllText(path);
-            var elementsFromFile = XDocument.Parse(xml)
-                .Descendants(descendant)
-                .ToList();
-            return elementsFromFile;
+            if (File.Exists(path))
+            {
+                string xml = File.ReadAllText(path);
+                var elementsFromFile = XDocument.Parse(xml)
+                    .Descendants(descendant)
+                    .ToList();
+                return elementsFromFile;
+            }
+            else
+            {
+                using (new FileStream(path, FileMode.Create));
+            }
+            return new List<XElement>();
         }
 
         /// <summary>

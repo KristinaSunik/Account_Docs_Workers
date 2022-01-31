@@ -25,8 +25,18 @@ namespace Account_Docs_Workers
                 if (birthDay != new DateTime(0))
                 {
                     var newWorker = new Worker(NameTextBox.Text, SurnameTextBox.Text, PatronymicTextBox.Text, birthDay);
-                    StartPageForm.workers.Add(newWorker);
-                    FileProvider.AddWorkerToFile(StartPageForm.pathWorkers, newWorker);
+                   
+                    if(StartPageForm.workers.Count != 0)
+                    {
+                        FileProvider.AddWorkerToFile(StartPageForm.pathWorkers, newWorker);
+                        StartPageForm.workers.Add(newWorker);
+                    }
+                    else
+                    {
+                        StartPageForm.workers.Add(newWorker);
+                        FileProvider.SerializeWorker(StartPageForm.pathWorkers, StartPageForm.workers);
+                    }
+                    
                     RefreshControls();
                     MessageBox.Show("Работник добавлен", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

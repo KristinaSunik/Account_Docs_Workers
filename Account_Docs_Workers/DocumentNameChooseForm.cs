@@ -4,7 +4,7 @@ namespace Account_Docs_Workers
 {
     public partial class DocumentNameChooseForm : Form
     {
-        public static string choosedDoc;
+
         public DocumentNameChooseForm()
         {
             InitializeComponent();
@@ -26,9 +26,10 @@ namespace Account_Docs_Workers
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            choosedDoc = StartPageForm.documents[e.RowIndex];
-            this.Close();
+            WorkerListForm.workerCardForm.DocumentNameTextBox.Text = StartPageForm.documents[e.RowIndex];
+            
             WorkerListForm.workerCardForm.Refresh();
+            Close();
         }
     }
 }

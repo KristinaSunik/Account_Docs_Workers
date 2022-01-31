@@ -184,7 +184,7 @@ namespace Account_Docs_Workers
         private System.Windows.Forms.Button IssueDocumentButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
-        private System.Windows.Forms.TextBox DocumentNameTextBox;
+        public System.Windows.Forms.TextBox DocumentNameTextBox;
         private System.Windows.Forms.Label NamePatronymicLabel;
         private System.Windows.Forms.Button chooseDocumentButton;
     }
