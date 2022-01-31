@@ -55,7 +55,7 @@ namespace Account_Docs_Workers
             this.PatronymicColumn});
             this.workerListDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.workerListDataGridView.Location = new System.Drawing.Point(-1, 15);
-            this.workerListDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.workerListDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.workerListDataGridView.Name = "workerListDataGridView";
             this.workerListDataGridView.ReadOnly = true;
             this.workerListDataGridView.RowHeadersWidth = 62;
@@ -106,7 +106,7 @@ namespace Account_Docs_Workers
             this.Controls.Add(this.workerListDataGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WorkerListForm";
             this.Text = "Список работников";
             ((System.ComponentModel.ISupportInitialize)(this.workerListDataGridView)).EndInit();

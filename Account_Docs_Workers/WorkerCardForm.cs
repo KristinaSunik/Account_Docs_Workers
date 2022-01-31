@@ -1,24 +1,26 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Account_Docs_Workers
 {
     public partial class WorkerCardForm : Form
     {
-        private Worker currentWorker;
+        public static Worker currentWorker;
         public WorkerCardForm(Worker worker)
         {
             currentWorker = worker;
-
+            
             InitializeComponent();
             InitializeMyControls();
 
             foreach (var document in worker.IssuedDocuments)
             {
-                issuedDocumentsGridView.Rows.Add(document.name, document.dateOfIssue);
+                issuedDocumentsGridView.Rows.Add(document.Name, document.DateOfIssue);
             }
 
             AutoSizeColumns();
+            DocumentNameTextBox.Text = DocumentNameChooseForm.choosedDoc;
         }
 
         private void InitializeMyControls()
@@ -37,13 +39,23 @@ namespace Account_Docs_Workers
             }
             else
             {
+                if(StartPageForm.documents.FirstOrDefault(x => x == DocumentNameTextBox.Text) == null)
+                {
+                    var result = MessageBox.Show("Добавить документ в список?", "Сохранить?!?", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    if(result == DialogResult.OK)
+                    {
+                        FileProvider.AddDocumentToFile(StartPageForm.pathDocuments, DocumentNameTextBox.Text);
+                        StartPageForm.documents.Add(DocumentNameTextBox.Text);
+                    }
+                }
                 currentWorker.IssuedDocuments.Add(new Document(DocumentNameTextBox.Text));
-                FileProvider.SerializeWorker(StartPageForm.path, StartPageForm.workers);
+                FileProvider.SerializeWorker(StartPageForm.pathWorkers, StartPageForm.workers);
                 DocumentNameTextBox.Text = "";
-                issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].dateOfIssue);
+                DocumentNameChooseForm.choosedDoc = "";
+                issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].Name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].DateOfIssue);
                 AutoSizeColumns();
 
-                MessageBox.Show("Выдача документа зарегистрирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Выдача документа зарегистрирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -55,5 +67,10 @@ namespace Account_Docs_Workers
             }
         }
 
+        private void chooseDocumentButton_Click(object sender, EventArgs e)
+        {
+            var chooseDocumentName = new DocumentNameChooseForm();
+            chooseDocumentName.Show();
+        }
     }
 }

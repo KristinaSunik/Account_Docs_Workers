@@ -26,7 +26,7 @@ namespace Account_Docs_Workers
                 {
                     var newWorker = new Worker(NameTextBox.Text, SurnameTextBox.Text, PatronymicTextBox.Text, birthDay);
                     StartPageForm.workers.Add(newWorker);
-                    FileProvider.AddWorkerToFile(StartPageForm.path, newWorker);
+                    FileProvider.AddWorkerToFile(StartPageForm.pathWorkers, newWorker);
                     RefreshControls();
                     MessageBox.Show("Работник добавлен", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

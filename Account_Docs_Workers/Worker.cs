@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Account_Docs_Workers
 {
@@ -44,7 +41,7 @@ namespace Account_Docs_Workers
         /// <param name="workers">пустой список работников</param>
         public static void AddWorkersToList(ref List<Worker> workers, string path)
         {
-            var workersFromFile = FileProvider.DeserializeWorker(path);
+            var workersFromFile = FileProvider.Deserialize(path, "WORKER");
             foreach (var workerXElement in workersFromFile)
             {
                 Guid unicNumber = new Guid(workerXElement.Element("unicNumber").Value);

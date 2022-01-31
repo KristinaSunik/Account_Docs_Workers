@@ -39,6 +39,7 @@ namespace Account_Docs_Workers
             this.IssueDocumentButton = new System.Windows.Forms.Button();
             this.DocumentNameTextBox = new System.Windows.Forms.TextBox();
             this.NamePatronymicLabel = new System.Windows.Forms.Label();
+            this.chooseDocumentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,11 +141,24 @@ namespace Account_Docs_Workers
             this.NamePatronymicLabel.Text = "Имя Отчество";
             this.NamePatronymicLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // chooseDocumentButton
+            // 
+            this.chooseDocumentButton.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chooseDocumentButton.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.chooseDocumentButton.Location = new System.Drawing.Point(326, 35);
+            this.chooseDocumentButton.Name = "chooseDocumentButton";
+            this.chooseDocumentButton.Size = new System.Drawing.Size(48, 34);
+            this.chooseDocumentButton.TabIndex = 7;
+            this.chooseDocumentButton.Text = ">>";
+            this.chooseDocumentButton.UseVisualStyleBackColor = true;
+            this.chooseDocumentButton.Click += new System.EventHandler(this.chooseDocumentButton_Click);
+            // 
             // WorkerCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 450);
+            this.Controls.Add(this.chooseDocumentButton);
             this.Controls.Add(this.NamePatronymicLabel);
             this.Controls.Add(this.DocumentNameTextBox);
             this.Controls.Add(this.IssueDocumentButton);
@@ -172,5 +186,6 @@ namespace Account_Docs_Workers
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
         private System.Windows.Forms.TextBox DocumentNameTextBox;
         private System.Windows.Forms.Label NamePatronymicLabel;
+        private System.Windows.Forms.Button chooseDocumentButton;
     }
 }

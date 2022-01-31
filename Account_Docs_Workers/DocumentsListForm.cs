@@ -23,7 +23,7 @@ namespace Account_Docs_Workers
                 foreach (var document in worker.IssuedDocuments)
                 {
                     documentsListDataGridView.Rows
-                        .Add(document.name, $"{worker.Surname} {worker.Name} {worker.Patronymic}", document.dateOfIssue);
+                        .Add(document.Name, $"{worker.Surname} {worker.Name} {worker.Patronymic}", document.DateOfIssue);
                 }
             }
 

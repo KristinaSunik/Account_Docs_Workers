@@ -9,17 +9,16 @@ namespace Account_Docs_Workers
     class FileProvider
     {
         /// <summary>
-        /// чтение XML файла с работниками и документами 
+        /// чтение XML файла
         /// </summary>
         /// <param name="path">путь к файлу для чтения</param>
-        /// <returns>список работников</returns>
-        public static List<XElement> DeserializeWorker(string path)
+        public static List<XElement> Deserialize(string path, string descendant)
         {
             string xml = File.ReadAllText(path);
-            var workersFromFile = XDocument.Parse(xml)
-                .Descendants("WORKER")
+            var elementsFromFile = XDocument.Parse(xml)
+                .Descendants(descendant)
                 .ToList();
-            return workersFromFile;
+            return elementsFromFile;
         }
 
         /// <summary>
@@ -46,8 +45,8 @@ namespace Account_Docs_Workers
                     documentsXElements = new XElement("issuedDocuments");
                     foreach (var document in worker.IssuedDocuments)
                     {
-                        XElement docName = new XElement("docName", document.name);
-                        XElement docDate = new XElement("docDate", document.dateOfIssue.Ticks);
+                        XElement docName = new XElement("docName", document.Name);
+                        XElement docDate = new XElement("docDate", document.DateOfIssue.Ticks);
                         documentsXElements.Add(new XElement("document", docName, docDate));
                     }
                 }
@@ -57,6 +56,24 @@ namespace Account_Docs_Workers
             }
 
             workersXElements.Save(path);
+        }
+
+        /// <summary>
+        /// полностью перезаписывает/перезаписывает файл с названиями документов в формате XML    <br/>
+        /// по заданному пути
+        /// </summary>
+        /// <param name="path">путь к файлу</param>
+        /// <param name="documents">список документов</param>
+        public static void SerializeDocument(string path, List<string> documents)
+        {
+            XElement documentsXElements = new XElement("DOCUMENT");
+
+            foreach (var document in documents)
+            {
+                documentsXElements.Add(new XElement("name", document));
+            }
+
+            documentsXElements.Save(path);
         }
 
         /// <summary>
@@ -79,13 +96,25 @@ namespace Account_Docs_Workers
             {
                 foreach (var document in worker.IssuedDocuments)
                 {
-                    XElement docName = new XElement("docName", document.name);
-                    XElement docDate = new XElement("docDate", Convert.ToInt64(document.dateOfIssue.Ticks));
+                    XElement docName = new XElement("docName", document.Name);
+                    XElement docDate = new XElement("docDate", Convert.ToInt64(document.DateOfIssue.Ticks));
                     documentsXElements.Add(new XElement("document", docName, docDate));
                 }
             }
 
             xml.Root.Add(new XElement("WORKER", unicNumber, name, surname, patronymic, birthDay, documentsXElements));
+            xml.Save(path);
+        }
+
+        /// <summary>
+        /// дозаписывает в формат hml данные по новому документу, введенные пользователем
+        /// </summary>
+        /// <param name="path">файл куда дозаписывается информация</param>
+        /// <param name="document">имя нового документа</param>
+        public static void AddDocumentToFile(string path, String document)
+        {
+            XDocument xml = XDocument.Load(path);
+            xml.Root.Add(new XElement("name", document));
             xml.Save(path);
         }
     }

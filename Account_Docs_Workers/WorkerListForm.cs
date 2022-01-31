@@ -6,7 +6,7 @@ namespace Account_Docs_Workers
     public partial class WorkerListForm : Form
     {
         private static List<Worker> _workers = new List<Worker>();
-
+        public static WorkerCardForm workerCardForm;
         public WorkerListForm(List <Worker> workers)
         {
             _workers = workers;
@@ -25,7 +25,7 @@ namespace Account_Docs_Workers
         {
             Worker currentWorker = _workers[e.RowIndex];
 
-            var workerCardForm = new WorkerCardForm(currentWorker);
+            workerCardForm = new WorkerCardForm(currentWorker);
             workerCardForm.Show();
         }
 
