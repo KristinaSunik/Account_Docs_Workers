@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Account_Docs_Workers
+namespace Account_Docs_Workers.Forms
 {
     public partial class WorkerCardForm : Form
     {

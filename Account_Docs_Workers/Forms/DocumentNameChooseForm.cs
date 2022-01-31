@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Account_Docs_Workers
+namespace Account_Docs_Workers.Forms
 {
     public partial class DocumentNameChooseForm : Form
     {

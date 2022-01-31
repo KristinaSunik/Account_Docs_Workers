@@ -1,5 +1,5 @@
 ﻿
-namespace Account_Docs_Workers
+namespace Account_Docs_Workers.Forms
 {
     partial class DocumentNameChooseForm
     {

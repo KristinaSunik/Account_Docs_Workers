@@ -46,54 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewWorkerForm.cs">
+    <Compile Include="Forms\AddNewWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewWorkerForm.Designer.cs">
+    <Compile Include="Forms\AddNewWorkerForm.Designer.cs">
       <DependentUpon>AddNewWorkerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Document.cs" />
-    <Compile Include="DocumentNameChooseForm.cs">
+    <Compile Include="Forms\DocumentNameChooseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocumentNameChooseForm.Designer.cs">
+    <Compile Include="Forms\DocumentNameChooseForm.Designer.cs">
       <DependentUpon>DocumentNameChooseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocumentsListForm.cs">
+    <Compile Include="Forms\DocumentsListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocumentsListForm.Designer.cs">
+    <Compile Include="Forms\DocumentsListForm.Designer.cs">
       <DependentUpon>DocumentsListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileProvider.cs" />
-    <Compile Include="StartPageForm.cs">
+    <Compile Include="Forms\StartPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartPageForm.Designer.cs">
+    <Compile Include="Forms\StartPageForm.Designer.cs">
       <DependentUpon>StartPageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Worker.cs" />
-    <Compile Include="WorkerCardForm.cs">
+    <Compile Include="Forms\WorkerCardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerCardForm.Designer.cs">
+    <Compile Include="Forms\WorkerCardForm.Designer.cs">
       <DependentUpon>WorkerCardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorkerListForm.cs">
+    <Compile Include="Forms\WorkerListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerListForm.Designer.cs">
+    <Compile Include="Forms\WorkerListForm.Designer.cs">
       <DependentUpon>WorkerListForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNewWorkerForm.resx">
+    <EmbeddedResource Include="Forms\AddNewWorkerForm.resx">
       <DependentUpon>AddNewWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocumentNameChooseForm.resx">
+    <EmbeddedResource Include="Forms\DocumentNameChooseForm.resx">
       <DependentUpon>DocumentNameChooseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocumentsListForm.resx">
+    <EmbeddedResource Include="Forms\DocumentsListForm.resx">
       <DependentUpon>DocumentsListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -105,13 +105,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StartPageForm.resx">
+    <EmbeddedResource Include="Forms\StartPageForm.resx">
       <DependentUpon>StartPageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WorkerCardForm.resx">
+    <EmbeddedResource Include="Forms\WorkerCardForm.resx">
       <DependentUpon>WorkerCardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WorkerListForm.resx">
+    <EmbeddedResource Include="Forms\WorkerListForm.resx">
       <DependentUpon>WorkerListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Account_Docs_Workers.Properties.Resources.datasource" />
@@ -132,10 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DATA\Names_Documents.xml" />
-    <Content Include="DATA\Workers_Documents.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

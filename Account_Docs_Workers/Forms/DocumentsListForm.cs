@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Account_Docs_Workers
+namespace Account_Docs_Workers.Forms
 {
     public partial class DocumentsListForm : Form
     {

@@ -13,7 +13,7 @@ namespace Account_Docs_Workers
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartPageForm());
+            Application.Run(new Forms.StartPageForm());
         }
     }
 }
