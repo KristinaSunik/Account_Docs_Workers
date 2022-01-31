@@ -52,6 +52,12 @@ namespace Account_Docs_Workers.Forms
 
                 return false;
             }
+            if (NameTextBox.Text.Length < 2)
+            {
+                MessageBox.Show("Имя не может быть таким коротким", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
             if (SurnameTextBox.Text == "")
             {
                 MessageBox.Show("Введите Фамилию работника", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -77,8 +83,8 @@ namespace Account_Docs_Workers.Forms
         private DateTime CheckDataFromUser(string dataFromUser)
         {
             DateTime birthDay = new DateTime(0);
-            dataFromUser = dataFromUser.Replace(" ", "");
-            string[] splitedDateFromUser = dataFromUser.Split(',', '.');
+
+            string[] splitedDateFromUser = dataFromUser.Split(',', '.', ' ');
 
             if (splitedDateFromUser.Length == 3)
             {
@@ -136,6 +142,11 @@ namespace Account_Docs_Workers.Forms
                 }
             }
             else
+            {
+                throw new FormatException("Формат даты должен быть **.**.****");
+            }
+
+            if (birthDay == new DateTime(0))
             {
                 throw new FormatException("Формат даты должен быть **.**.****");
             }
