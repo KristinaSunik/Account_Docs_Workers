@@ -49,10 +49,12 @@ namespace Account_Docs_Workers
                 }
                 currentWorker.IssuedDocuments.Add(new Document(DocumentNameTextBox.Text));
                 FileProvider.SerializeWorker(StartPageForm.pathWorkers, StartPageForm.workers);
+
                 DocumentNameTextBox.Text = "";
                 issuedDocumentsGridView.Rows.Add(currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].Name, currentWorker.IssuedDocuments[currentWorker.IssuedDocuments.Count - 1].DateOfIssue);
                 AutoSizeColumns();
-                this.Refresh();
+                Refresh();
+
                 MessageBox.Show("Выдача документа зарегистрирована", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
