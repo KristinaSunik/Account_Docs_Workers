@@ -17,7 +17,10 @@ namespace Account_Docs_Workers
             InitializeComponent();
             pathWorkers = Directory.GetCurrentDirectory() + "\\Workers_Documents.xml";
             pathDocuments = Directory.GetCurrentDirectory() + "\\Names_Documents.xml";
-            //TemporaryMethodToFillInTables();
+            if (!File.Exists(pathWorkers) || !File.Exists(pathDocuments))
+            {
+                TemporaryMethodToFillInTables();
+            }
 
             if (workers.Count == 0)
             {
@@ -31,19 +34,26 @@ namespace Account_Docs_Workers
 
         private static void TemporaryMethodToFillInTables()
         {
-            workers.Add(new Worker("Кристина", "Шуканова", "Олеговна", new DateTime(1988, 9, 14)));
-            workers.Add(new Worker("Никифороов", "Андрей", "Алексеевич", new DateTime(1985, 10, 25)));
-            workers.Add(new Worker("Иванов", "Иван", "Иванович", new DateTime(1980, 2, 7)));
-            
-            documents = new List<string>
-            {   "Схема тайных ходов Кремля",
+            if (!File.Exists(pathWorkers))
+            {
+                workers.Add(new Worker("Кристина", "Шуканова", "Олеговна", new DateTime(1988, 9, 14)));
+                workers.Add(new Worker("Никифороов", "Андрей", "Алексеевич", new DateTime(1985, 10, 25)));
+                workers.Add(new Worker("Иванов", "Иван", "Иванович", new DateTime(1980, 2, 7)));
+
+                FileProvider.SerializeWorker(pathWorkers, workers);
+            }
+
+            if (!File.Exists(pathDocuments))
+            {
+                documents = new List<string>{
+                "Схема тайных ходов Кремля",
                 "Обязательство о неразглашении №12",
                 "Военная тайна №52",
                 "Архив пациентов №10",
                 "Дело №43"};
 
-            FileProvider.SerializeWorker(pathWorkers, workers);
-            FileProvider.SerializeDocument(pathDocuments, documents);
+                FileProvider.SerializeDocument(pathDocuments, documents);
+            }
         }
 
         private void WorkersListButton_Click(object sender, EventArgs e)

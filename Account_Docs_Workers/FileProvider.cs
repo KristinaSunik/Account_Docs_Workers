@@ -14,19 +14,12 @@ namespace Account_Docs_Workers
         /// <param name="path">путь к файлу для чтения</param>
         public static List<XElement> Deserialize(string path, string descendant)
         {
-            if (File.Exists(path))
-            {
-                string xml = File.ReadAllText(path);
-                var elementsFromFile = XDocument.Parse(xml)
-                    .Descendants(descendant)
-                    .ToList();
-                return elementsFromFile;
-            }
-            else
-            {
-                using (new FileStream(path, FileMode.Create));
-            }
-            return new List<XElement>();
+            string xml = File.ReadAllText(path);
+            var elementsFromFile = XDocument.Parse(xml)
+                .Descendants(descendant)
+                .ToList();
+
+            return elementsFromFile;
         }
 
         /// <summary>
@@ -90,7 +83,7 @@ namespace Account_Docs_Workers
         /// <param name="path">файл куда дозаписывается информация</param>
         /// <param name="worker">данные по работнику новому</param>
         public static void AddWorkerToFile(string path, Worker worker)
-        {                                                                                                                                                                  
+        {
             XDocument xml = XDocument.Load(path);
             XElement unicNumber = new XElement("unicNumber", worker.UnicNumber);
             XElement name = new XElement("name", worker.Name);
