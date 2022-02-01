@@ -24,6 +24,7 @@ namespace Account_Docs_Workers.Forms
 
         private void InitializeMyControls()
         {
+            documentNamesListToolTip.SetToolTip(chooseDocumentButton, "Выбрать имя документа из списка");
             DocumentNameTextBox.Focus();
             SurNameLabel.Text = $"{currentWorker.Surname}";
             NamePatronymicLabel.Text = $"{currentWorker.Name} {currentWorker.Patronymic}";

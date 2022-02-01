@@ -29,6 +29,7 @@ namespace Account_Docs_Workers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerCardForm));
             this.SurNameLabel = new System.Windows.Forms.Label();
             this.BirthDayLabel = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@ namespace Account_Docs_Workers.Forms
             this.DocumentNameTextBox = new System.Windows.Forms.TextBox();
             this.NamePatronymicLabel = new System.Windows.Forms.Label();
             this.chooseDocumentButton = new System.Windows.Forms.Button();
+            this.documentNamesListToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.issuedDocumentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,5 +189,6 @@ namespace Account_Docs_Workers.Forms
         public System.Windows.Forms.TextBox DocumentNameTextBox;
         private System.Windows.Forms.Label NamePatronymicLabel;
         private System.Windows.Forms.Button chooseDocumentButton;
+        private System.Windows.Forms.ToolTip documentNamesListToolTip;
     }
 }
