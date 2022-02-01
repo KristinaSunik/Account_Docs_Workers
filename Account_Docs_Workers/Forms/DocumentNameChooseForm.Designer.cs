@@ -60,7 +60,6 @@ namespace Account_Docs_Workers.Forms
             this.DocumentName.Name = "DocumentName";
             this.DocumentName.ReadOnly = true;
             this.DocumentName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DocumentName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.DocumentName.Width = 150;
             // 
             // DocumentNameChooseForm

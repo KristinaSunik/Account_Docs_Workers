@@ -15,11 +15,14 @@ namespace Account_Docs_Workers
         public static List<XElement> Deserialize(string path, string descendant)
         {
             string xml = File.ReadAllText(path);
-            var elementsFromFile = XDocument.Parse(xml)
-                .Descendants(descendant)
-                .ToList();
+            if (xml != "")
+            {
+                return XDocument.Parse(xml)
+                    .Descendants(descendant)
+                    .ToList();
+            }
 
-            return elementsFromFile;
+            return null;
         }
 
         /// <summary>

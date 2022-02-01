@@ -23,10 +23,13 @@ namespace Account_Docs_Workers.Forms
 
         private void workerListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Worker currentWorker = _workers[e.RowIndex];
+            if (e.RowIndex != -1)
+            {
+                Worker currentWorker = _workers[e.RowIndex];
 
-            workerCardForm = new WorkerCardForm(currentWorker);
-            workerCardForm.Show();
+                workerCardForm = new WorkerCardForm(currentWorker);
+                workerCardForm.Show();
+            }
         }
 
         private void AutosizeColumn()

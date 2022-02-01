@@ -17,25 +17,36 @@ namespace Account_Docs_Workers.Forms
             InitializeComponent();
             pathWorkers = Directory.GetCurrentDirectory() + "\\Workers_Documents.xml";
             pathDocuments = Directory.GetCurrentDirectory() + "\\Names_Documents.xml";
-            if (!File.Exists(pathWorkers) || !File.Exists(pathDocuments))
-            {
-                TemporaryMethodToFillInTables();
-            }
-
+            
             if (workers.Count == 0)
             {
-                Worker.AddWorkersToList(ref workers, pathWorkers);
+                if (!File.Exists(pathWorkers))
+                {
+                    CreateFile();
+                }
+                else
+                {
+                    Worker.AddWorkersToList(ref workers, pathWorkers);
+                }
             }
             if (documents.Count == 0)
             {
-                Document.AddDocNamesToList(ref documents, pathDocuments);
+                if (!File.Exists(pathDocuments))
+                {
+                    CreateFile();
+                }
+                else
+                {
+                    Document.AddDocNamesToList(ref documents, pathDocuments);
+                }
             }
         }
 
-        private static void TemporaryMethodToFillInTables()
+        private static void CreateFile()
         {
             if (!File.Exists(pathWorkers))
             {
+                //using (FileStream fs = File.Create(pathWorkers)) { };
                 workers.Add(new Worker("Кристина", "Шуканова", "Олеговна", new DateTime(1988, 9, 14)));
                 workers.Add(new Worker("Никифороов", "Андрей", "Алексеевич", new DateTime(1985, 10, 25)));
                 workers.Add(new Worker("Иванов", "Иван", "Иванович", new DateTime(1980, 2, 7)));
@@ -45,6 +56,7 @@ namespace Account_Docs_Workers.Forms
 
             if (!File.Exists(pathDocuments))
             {
+                //using (FileStream fs = File.Create(pathDocuments)) { };
                 documents = new List<string>{
                 "Схема тайных ходов Кремля",
                 "Обязательство о неразглашении №12",

@@ -26,10 +26,13 @@ namespace Account_Docs_Workers.Forms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            WorkerListForm.workerCardForm.DocumentNameTextBox.Text = StartPageForm.documents[e.RowIndex];
-            
-            WorkerListForm.workerCardForm.Refresh();
-            Close();
+            if (e.RowIndex != -1)
+            {
+                WorkerListForm.workerCardForm.DocumentNameTextBox.Text = StartPageForm.documents[e.RowIndex];
+
+                WorkerListForm.workerCardForm.Refresh();
+                Close();
+            }
         }
     }
 }

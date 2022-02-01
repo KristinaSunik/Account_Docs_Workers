@@ -70,30 +70,36 @@ namespace Account_Docs_Workers.Forms
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.NameColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.NameColumn.Frozen = true;
             this.NameColumn.HeaderText = "Имя";
             this.NameColumn.MinimumWidth = 8;
             this.NameColumn.Name = "NameColumn";
             this.NameColumn.ReadOnly = true;
+            this.NameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.NameColumn.Width = 150;
             // 
             // SurnameColumn
             // 
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.SurnameColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SurnameColumn.Frozen = true;
             this.SurnameColumn.HeaderText = "Фамилия";
             this.SurnameColumn.MinimumWidth = 8;
             this.SurnameColumn.Name = "SurnameColumn";
             this.SurnameColumn.ReadOnly = true;
+            this.SurnameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.SurnameColumn.Width = 150;
             // 
             // PatronymicColumn
             // 
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PatronymicColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PatronymicColumn.Frozen = true;
             this.PatronymicColumn.HeaderText = "Отчество";
             this.PatronymicColumn.MinimumWidth = 8;
             this.PatronymicColumn.Name = "PatronymicColumn";
             this.PatronymicColumn.ReadOnly = true;
+            this.PatronymicColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.PatronymicColumn.Width = 150;
             // 
             // WorkerListForm
